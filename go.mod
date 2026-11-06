@@ -1,0 +1,3 @@
+module github.com/abdullahshahad-w/chirpy
+
+go 1.27.1
