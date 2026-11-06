@@ -5,7 +5,6 @@ import (
 	"log"
 	"net/http"
 	"sync/atomic"
-
 	"github.com/abdullahshahad-w/chirpy/internal/handlers"
 )
 
@@ -45,6 +44,7 @@ func main() {
 	serveMux.HandleFunc("GET /api/healthz", handlers.ReadinessHandler)
 	serveMux.HandleFunc("GET /admin/metrics", apiConfig.metricsHandler)
 	serveMux.HandleFunc("POST /admin/reset", apiConfig.resetHandler)
+	serveMux.HandleFunc("POST /api/validate_chirp", handlers.ValidateChirp)
 
 	server := http.Server{
 		Addr: ":8080",
